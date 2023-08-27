@@ -6,6 +6,7 @@ import { useAppStore } from "../store";
 import { OtherDataList } from "./OtherDataList";
 import Table from 'react-bootstrap/Table';
 import { SecondaryLoader } from "../coman/loder";
+import Footer from "../coman/footer";
 
 export const ResourceInstance = () => {
   const { resource, id } = useParams();
@@ -52,6 +53,7 @@ export const ResourceInstance = () => {
   const tableHeaders = Object.keys(data).filter(key => key !== 'url');
 
   return (
+    <>
     <div>
       <Table striped bordered hover responsive>
         <thead>
@@ -73,5 +75,7 @@ export const ResourceInstance = () => {
       </Table>
       <OtherDataList resource={data} />
     </div>
+    <Footer />
+    </>
   );
 };

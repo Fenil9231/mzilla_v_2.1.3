@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { useAppStore } from "../store";
 import { ResourceRow } from "./Resourcerow";
 import { useParams } from "react-router-dom";
-import { Button, Spinner, Table } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
+import Footer from "../coman/footer";
+import { SecondaryLoader } from "../coman/loder";
 
 export const ResourceList = () => {
   const { resource } = useParams();
@@ -28,12 +30,13 @@ export const ResourceList = () => {
   }, [fetchResourceList, makeInitialFetch]);
 
   return (
+    <>
     <div className="tab-container">
       <h3 className="mt-4">MovieZilla's - Starwar {resource}</h3>
 
       {/* Show loader or error message */}
       {req.isFetching && (
-        <Spinner animation="border" role="status" className="mt-3" />
+         <h3 className="msgforloading"> We Are Fetching Data For You !! Please Wait ...</h3>
       )}
       {req.errMsg && <div className="text-danger mt-3">{req.errMsg}</div>}
 
@@ -66,11 +69,14 @@ export const ResourceList = () => {
         onClick={() => fetchResourceList()} 
       >
         {isLoadingMore ? (
-          <Spinner animation="border" size="sm" role="status" className="mr-2" />
+          <SecondaryLoader/>
         ) : (
-          "Load More ..."
+         <> More {resource} </>
         )}
       </Button>
     </div>
+    <Footer />
+    </>
+
   );
 };

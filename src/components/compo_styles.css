@@ -62,76 +62,15 @@
   font-size: 18px;
 }
 
-/* Media query for tablet view */
-@media (max-width: 768px) {
-  .resource-list-container {
-    padding: 10px;
-  }
-
-  .resource-header {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-
-  .load-more-button {
-    margin-top: 5px;
-  }
-
-  .record-length,
-  .req-state {
-    font-size: 16px;
-    margin-top: 10px;
-  }
-
-  .otherDataItem {
-    height: auto;
-    padding: 0.3rem;
-    margin: 0.3rem 0;
-  }
-
-  .title,
-  .detail {
-    font-size: 16px;
-  }
-}
-
-/* Media query for mobile view */
-@media (max-width: 480px) {
-  .resource-list-container {
-    margin: 10px;
-    padding: 10px;
-  }
-
-  .resource-header {
-    font-size: 18px;
-  }
-
-  .load-more-button {
-    margin-top: 5px;
-  }
-
-  .record-length,
-  .req-state {
-    font-size: 14px;
-    margin-top: 10px;
-  }
-
-  .otherDataItem {
-    height: auto;
-    padding: 0.2rem;
-    margin: 0.2rem 0;
-  }
-
-  .title,
-  .detail {
-    font-size: 14px;
-  }
-}
 
 .container{
   padding: 15px;
   max-width: 85%;
   margin-bottom: 20px;
+}
+
+.msgforloading{
+  margin-top: 25px;
 }
 
 
@@ -149,4 +88,8 @@
 
 .pointer{
   cursor: pointer;
+}
+
+.footer{
+  margin-bottom: 10px;
 }
