@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useAppStore } from "../store";
 import { ResourceRow } from "./Resourcerow";
 import { useParams } from "react-router-dom";
-import { Button, Spinner } from "react-bootstrap";
+import { Button, Spinner, Table } from "react-bootstrap";
 
 export const ResourceList = () => {
   const { resource } = useParams();
@@ -10,9 +10,7 @@ export const ResourceList = () => {
   const { fetchList } = useAppStore((state) => state.actions);
   const noMoreRecords = records.length > 0 && !next;
   const fetchCountRef = useRef(0);
-  const makeInitialFetch =
-    records.length === 0 && !next && Object.keys(req).length === 0;
-
+  const makeInitialFetch =records.length === 0 && !next && Object.keys(req).length === 0;
   const [isLoadingMore, setIsLoadingMore] = useState(false); // State for tracking loading of "Load More" button
 
   const fetchResourceList = React.useCallback(() => {
@@ -30,7 +28,7 @@ export const ResourceList = () => {
   }, [fetchResourceList, makeInitialFetch]);
 
   return (
-    <div className="container">
+    <div className="tab-container">
       <h3 className="mt-4">MovieZilla's - Starwar {resource}</h3>
 
       {/* Show loader or error message */}
@@ -40,7 +38,8 @@ export const ResourceList = () => {
       {req.errMsg && <div className="text-danger mt-3">{req.errMsg}</div>}
 
       {/* Table */}
-      <table className="table table-bordered mt-4">
+      
+      <Table striped bordered hover>
         <thead className="thead-dark">
           <tr>
             <th>Sr No</th>
@@ -58,7 +57,7 @@ export const ResourceList = () => {
             />
           ))}
         </tbody>
-      </table>
+      </Table>
 
       <Button
         variant="primary"

@@ -1,54 +1,45 @@
-
-
-
 /* ResourceList.css */
 
+/* Regular styles for larger screens */
 .resource-list-container {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f5f5f5;
-  }
-  
-  .resource-header {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .resource-table {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  .load-more-button {
-    margin-top: 10px;
-  }
-  
-  .record-length {
-    font-size: 18px;
-    margin-top: 20px;
-  }
-  
-  .req-state {
-    font-size: 18px;
-    margin-top: 20px;
-  }
-  
-  .loadmore{
-    justify-content: center;
-  }
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
 
-  .retrybutton{
-    cursor: 'pointer' ;
-  }
+.resource-header {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
+.resource-table {
+  width: 100%;
+  border-radius: 10px;
+}
 
-/* .table thead th {
-  background-color: gray; 
-  color: black;  
-}  */
+.load-more-button {
+  margin-top: 10px;
+}
 
+.record-length {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.req-state {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.loadmore {
+  justify-content: center;
+}
+
+.retrybutton {
+  cursor: pointer;
+}
 
 .otherDataItem {
   padding: 0.5rem;
@@ -59,6 +50,7 @@
 
 .otherDataItem:hover {
   background: #e4e4e4;
+  transform: scale(1.1);
 }
 
 .title {
@@ -66,6 +58,95 @@
   font-size: 18px;
 }
 
-.detail{
+.detail {
   font-size: 18px;
+}
+
+/* Media query for tablet view */
+@media (max-width: 768px) {
+  .resource-list-container {
+    padding: 10px;
+  }
+
+  .resource-header {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .load-more-button {
+    margin-top: 5px;
+  }
+
+  .record-length,
+  .req-state {
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  .otherDataItem {
+    height: auto;
+    padding: 0.3rem;
+    margin: 0.3rem 0;
+  }
+
+  .title,
+  .detail {
+    font-size: 16px;
+  }
+}
+
+/* Media query for mobile view */
+@media (max-width: 480px) {
+  .resource-list-container {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  .resource-header {
+    font-size: 18px;
+  }
+
+  .load-more-button {
+    margin-top: 5px;
+  }
+
+  .record-length,
+  .req-state {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .otherDataItem {
+    height: auto;
+    padding: 0.2rem;
+    margin: 0.2rem 0;
+  }
+
+  .title,
+  .detail {
+    font-size: 14px;
+  }
+}
+
+.container{
+  padding: 15px;
+  max-width: 85%;
+  margin-bottom: 20px;
+}
+
+
+.tab-container{
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 75%; 
+  margin: 0 auto;
+  margin-bottom: 5%; 
+
+  padding: 30px;
+
+}
+
+.pointer{
+  cursor: pointer;
 }

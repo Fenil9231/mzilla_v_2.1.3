@@ -42,7 +42,7 @@ export const OtherDataItem = ({ url }) => {
         </div>
       ) : errMsg ? (
         <div style={{ color: 'red' }}>
-          {<RiSignalWifiErrorFill/>} &nbsp;&nbsp;&nbsp; <span style={{ cursor: 'pointer' }} onClick={retry}><TfiReload /></span> &nbsp;&nbsp; {id}
+          {<RiSignalWifiErrorFill/>} &nbsp;&nbsp;&nbsp; <span className="pointer" onClick={retry}><TfiReload /></span> &nbsp;&nbsp; {id}
         </div>
       ) : (
         <div>
