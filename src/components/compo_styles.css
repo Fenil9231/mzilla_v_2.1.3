@@ -1,0 +1,71 @@
+
+
+
+/* ResourceList.css */
+
+.resource-list-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #f5f5f5;
+  }
+  
+  .resource-header {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .resource-table {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .load-more-button {
+    margin-top: 10px;
+  }
+  
+  .record-length {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .req-state {
+    font-size: 18px;
+    margin-top: 20px;
+  }
+  
+  .loadmore{
+    justify-content: center;
+  }
+
+  .retrybutton{
+    cursor: 'pointer' ;
+  }
+
+
+/* .table thead th {
+  background-color: gray; 
+  color: black;  
+}  */
+
+
+.otherDataItem {
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  background: #f6f6f6;
+  height: 35px;
+}
+
+.otherDataItem:hover {
+  background: #e4e4e4;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.detail{
+  font-size: 18px;
+}
