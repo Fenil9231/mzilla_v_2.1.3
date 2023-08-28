@@ -3,7 +3,6 @@ import { useAppStore } from "../store";
 import { ResourceRow } from "./Resourcerow";
 import { useParams } from "react-router-dom";
 import { Button, Table } from "react-bootstrap";
-import Footer from "../coman/footer";
 import { SecondaryLoader } from "../coman/loder";
 
 export const ResourceList = () => {
@@ -31,7 +30,6 @@ export const ResourceList = () => {
   }, [fetchResourceList, makeInitialFetch]);
 
   return (
-    <>
       <div className="tab-container">
         <h3 className="mt-4">MovieZilla's - Starwar {resource}</h3>
 
@@ -77,6 +75,5 @@ export const ResourceList = () => {
           </Button>
         )}
       </div>
-    </>
   );
 };
