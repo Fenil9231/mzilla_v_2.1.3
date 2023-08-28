@@ -38,7 +38,7 @@ export const OtherDataItem = ({ url }) => {
     <div className='otherDataItem' ref={ref} data-test-id={`instance_${resourceName}_${id}`}>
       {isFetching ? (
         <div>
-          <SecondaryLoader /> &nbsp;&nbsp;&nbsp; {id}
+          <SecondaryLoader /> &nbsp;&nbsp; {id}
         </div>
       ) : errMsg ? (
         <div style={{ color: 'red' }}>

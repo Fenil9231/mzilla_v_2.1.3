@@ -7,6 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import { Container } from 'react-bootstrap';
 import  { About, Home,Version }  from './index';  
 import './compo_styles.css'; 
+import Footer from '../coman/footer';
 
 export const Parentcomponent = () => {
 
@@ -18,6 +19,7 @@ const ResourceListWrapper = () => {
   
 
   return (
+    <>
     <div className="App">
       <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
         <Container>
@@ -76,5 +78,7 @@ const ResourceListWrapper = () => {
         </div>
       </div>
     </div>
+          <Footer />
+</>
   );
 }
