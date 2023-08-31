@@ -1,17 +1,17 @@
 import React, { useEffect, useRef } from "react";
 import { useParams } from "react-router-dom";
 import { getUniqResourceIdsFromRecords } from "../store/services/helper";
-import { getResourceInstanceUrl } from "../coman/coman";
+import { capitalizeFirstLetter, getResourceInstanceUrl } from "../coman/coman";
 import { useAppStore } from "../store";
 import { OtherDataList } from "./OtherDataList";
-import Table from 'react-bootstrap/Table';
+import Table from "react-bootstrap/Table";
 import { SecondaryLoader } from "../coman/loder";
-import Footer from "../coman/footer";
+import "./compo_styles.css";
 
 export const ResourceInstance = () => {
   const { resource, id } = useParams();
-  const resourcesById = useAppStore(state => state.data.resourcesById);
-  const fetchInstance = useAppStore(state => state.actions.fetchInstance);
+  const resourcesById = useAppStore((state) => state.data.resourcesById);
+  const fetchInstance = useAppStore((state) => state.actions.fetchInstance);
   const url = getResourceInstanceUrl(resource, id);
   const currentResource = resourcesById[url];
   const countRef = useRef(0);
@@ -23,23 +23,23 @@ export const ResourceInstance = () => {
       }
     }
     countRef.current++;
-  }, [currentResource,fetchInstance,url]);
+  }, [currentResource, fetchInstance, url]);
 
   const { isFetching, errMsg, data } = currentResource || {};
 
   useEffect(() => {
     if (data) {
       const urls = getUniqResourceIdsFromRecords([data]);
-      urls.forEach(url => {
+      urls.forEach((url) => {
         if (resourcesById[url] === undefined) {
           fetchInstance(url, true);
         }
       });
     }
-  }, [data, resourcesById,fetchInstance,url]);
+  }, [data, resourcesById, fetchInstance, url]);
 
   if (isFetching) {
-    return <SecondaryLoader/>;
+    return <SecondaryLoader />;
   }
 
   if (errMsg) {
@@ -50,12 +50,27 @@ export const ResourceInstance = () => {
     return null;
   }
 
-  const tableHeaders = Object.keys(data).filter(key => key !== 'url');
+  const keysToExclude = [
+    "characters",
+    "films",
+    "vehicles",
+    "opening_crawl",
+    "planets",
+    "starships",
+    "species",
+    "people",
+    "homeworld",
+    "residents",
+    "pilots"
+  ];
+
+  const tableHeaders = Object.keys(data).filter(
+    (key) => key !== "url" && !keysToExclude.includes(key)
+  );
 
   return (
-    <>
-    <div>
-      <Table striped bordered hover responsive>
+    <div className="tab-container">
+      <Table  bordered hover responsive>
         <thead>
           <tr>
             <th>Sr No</th>
@@ -66,16 +81,18 @@ export const ResourceInstance = () => {
         <tbody>
           {tableHeaders.map((header, index) => (
             <tr key={index}>
-              <td>{id}</td>
-              <td>{header}</td>
-              <td>{JSON.stringify(data[header])}</td>
+              <td>{index + 1}</td>
+              <td className="header-cell">{capitalizeFirstLetter(header)}</td>
+              <td>{capitalizeFirstLetter(data[header])}</td>
             </tr>
           ))}
+          <tr>
+            <div colSpan="4">
+              <OtherDataList resource={data} />
+            </div>
+          </tr>
         </tbody>
       </Table>
-      <OtherDataList resource={data} />
     </div>
-    <Footer />
-    </>
   );
 };

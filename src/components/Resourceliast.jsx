@@ -33,11 +33,9 @@ export const ResourceList = () => {
       <div className="tab-container">
         <h3 className="mt-4">MovieZilla's - Starwar {resource}</h3>
 
-        {/* Show loader or error message */}
 
-        {/* Table */}
 
-        <Table striped bordered hover>
+        <Table  bordered hover>
           <thead className="thead-dark">
             <tr>
               <th>Sr No</th>
@@ -48,7 +46,6 @@ export const ResourceList = () => {
           <tbody>
             {req.isFetching && (
               <h3 className="msgforloading">
-                {" "}
                 We Are Fetching Data For You !! Please Wait ...
               </h3>
             )}

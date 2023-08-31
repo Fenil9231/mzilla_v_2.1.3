@@ -1,6 +1,6 @@
 import React from "react";
 import { OtherDataList } from "./OtherDataList";
-import { InfoKeysByResourceName } from "../coman/coman";
+import { InfoKeysByResourceName, capitalizeFirstLetter } from "../coman/coman";
 import './compo_styles.css'
 
 export const ResourceRow = ({ resource, srNo, resourceName }) => {
@@ -25,6 +25,4 @@ export const ResourceRow = ({ resource, srNo, resourceName }) => {
   );
 };
 
-function capitalizeFirstLetter(str) {
-  return str.charAt(0).toUpperCase() + str.slice(1);
-}
+

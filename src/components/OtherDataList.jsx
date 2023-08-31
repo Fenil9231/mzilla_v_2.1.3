@@ -12,6 +12,8 @@ export const OtherDataList = ({ resource }) => {
     { key: "pilots", title: "Pilots" },
     { key: "characters", title: "Characters" },
     { key: "residents", title: "Residents" },
+    
+
   ];
 
   const filteredKeys = myMap.filter(({ key }) => resource[key] !== undefined);
