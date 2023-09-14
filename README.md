@@ -1,6 +1,7 @@
-# Resume Management Project
+# Swapi Deshbord Project
 
-This project is a web-based application for managing and displaying resumes. It includes features for adding, editing, and viewing user resumes. Below, you'll find details about the project's structure, functionality, and key utility files.
+- This project is devloped using StarWars (SWAPI_API).
+- This project is a web-based application for managing and displaying starwar Characters,Vehicles,Starships,Planets,species,Films etc. Below, you'll find details about the project's structure, functionality, and key utility files.
 
 ## Table of Contents
 
@@ -16,7 +17,7 @@ This project is a web-based application for managing and displaying resumes. It 
 
 ## Overview
 
-The Resume Management Project is a web application designed to help users manage and showcase their resumes. It includes various components and features for interacting with resume data.
+The Moviezilla web application designed to help users to view swapi API data. It includes various components and features for interacting with swapi starwar's api data.
 
 ## Features
 
@@ -39,6 +40,7 @@ The project is built using the following technologies:
 - Bootstrap for styling the components.
 - Axios for making HTTP requests to an external API.
 - Lodash for utility functions.
+- Zustand for state management.
 
 ## Installation
 
@@ -47,11 +49,11 @@ To run this project locally, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/your-username/resume-management.git
+   git clone https://github.com/Fenil9231/mzilla_v_2.1.3.git
 
 2. Navigate to the project directory:
    ```bash
-   cd resume-management
+   cd mzilla_v_2.1.3
 3. Install dependencies:
     ```bash
     npm install
@@ -101,13 +103,11 @@ Contributions to this project are welcome. If you'd like to contribute, please f
 
 5. Open a pull request to the main repository.
 
-## License
-This project is licensed under the MIT License. See the LICENSE file for details.
 
 ## Contact
 If you have questions or feedback, feel free to reach out:
 
-- GitHub: Your GitHub Profile
-- LinkedIn: Your LinkedIn Profile
-- Email: your.email@example.com
+- GitHub: https://github.com/Fenil9231
+- LinkedIn: https://www.linkedin.com/in/fenil-kothiya-45327a270/
+- Email: fenil.kothiya88@gmail.com
 
