@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# Resume Management Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a web-based application for managing and displaying resumes. It includes features for adding, editing, and viewing user resumes. Below, you'll find details about the project's structure, functionality, and key utility files.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Utility Functions](#utility-functions)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+The Resume Management Project is a web application designed to help users manage and showcase their resumes. It includes various components and features for interacting with resume data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+Key features and functionalities of the Resume Management Project include:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Displaying a carousel of images on the home page.
+- Fetching and displaying data from an external API.
+- Handling loading and error states for data fetching.
+- Displaying detailed information about a specific resource.
+- Displaying a list of resources with pagination support.
+- Including a footer with copyright information and a link to your LinkedIn profile.
+- Showing the current version of the application.
 
-### `npm run build`
+## Technologies Used
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The project is built using the following technologies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React for the frontend user interface.
+- React Router for handling routing and navigation.
+- Bootstrap for styling the components.
+- Axios for making HTTP requests to an external API.
+- Lodash for utility functions.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Installation
 
-### `npm run eject`
+To run this project locally, follow these steps:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Clone the repository:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   git clone https://github.com/your-username/resume-management.git
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+2. Navigate to the project directory:
+   ```bash
+   cd resume-management
+3. Install dependencies:
+    ```bash
+    npm install
+4. Start the application:
+    ```bash
+    npm start
+5. Access the application in your web browser at http://localhost:3000
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Usage
+Visit the application in your web browser.
+Explore the different components and features, including the carousel, resource lists, and resource details.
+Experience data fetching and pagination in action.
+Check the footer for copyright information and a link to your LinkedIn profile.
+View the current version of the application.
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Utility Functions
+helper.js
+This file (helper.js) contains utility functions used throughout the project. Some of the key functions include:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+getLoadingState: Returns an object representing a loading state.
+getErrorState: Returns an object representing an error state with an optional error message.
+getSuccessState: Returns an object representing a success state with data.
+getAxiosErrorMessage: Extracts error messages from Axios error responses.
+getUniqResourceIdsFromRecords: Extracts unique resource IDs from a list of records.
+api.js
+This file (api.js) contains functions for making API requests using Axios. The key functions include:
 
-### Code Splitting
+getActions: Returns functions for fetching resource lists and resource instances. It also handles loading, error states, and data updates.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Contributing
+Contributions to this project are welcome. If you'd like to contribute, please follow these steps:
 
-### Analyzing the Bundle Size
+1. Fork the repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+2. Create a new branch for your feature:
+    ```bash
+    git checkout -b feature/new-feature
 
-### Making a Progressive Web App
+3. Commit your changes:
+    ```bash
+    git commit -m "Add new feature"
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+4. Push your branch to your fork:
+    ```bash
+    git push origin feature/new-feature
 
-### Advanced Configuration
+5. Open a pull request to the main repository.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
 
-### Deployment
+## Contact
+If you have questions or feedback, feel free to reach out:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- GitHub: Your GitHub Profile
+- LinkedIn: Your LinkedIn Profile
+- Email: your.email@example.com
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
