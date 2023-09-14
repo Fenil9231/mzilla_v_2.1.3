@@ -2,7 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { useAppStore } from "../store";
 import { ResourceRow } from "./Resourcerow";
 import { useParams } from "react-router-dom";
-import { Button, Spinner } from "react-bootstrap";
+import { Button, Table } from "react-bootstrap";
+import { SecondaryLoader } from "../coman/loder";
 
 export const ResourceList = () => {
   const { resource } = useParams();
@@ -12,7 +13,6 @@ export const ResourceList = () => {
   const fetchCountRef = useRef(0);
   const makeInitialFetch =
     records.length === 0 && !next && Object.keys(req).length === 0;
-
   const [isLoadingMore, setIsLoadingMore] = useState(false); // State for tracking loading of "Load More" button
 
   const fetchResourceList = React.useCallback(() => {
@@ -21,7 +21,7 @@ export const ResourceList = () => {
       .then(() => setIsLoadingMore(false)) // Set loading state to false after fetch is complete
       .catch(() => setIsLoadingMore(false)); // Handle errors and set loading state to false
     fetchCountRef.current++;
-  }, [resource, next,fetchList]);
+  }, [resource, next, fetchList]);
 
   useEffect(() => {
     if (fetchCountRef.current === 0 && makeInitialFetch) {
@@ -30,48 +30,47 @@ export const ResourceList = () => {
   }, [fetchResourceList, makeInitialFetch]);
 
   return (
-    <div className="container">
-      <h3 className="mt-4">MovieZilla's - Starwar {resource}</h3>
+      <div className="tab-container">
+        <h3 className="mt-4">MovieZilla's - Starwar {resource}</h3>
 
-      {/* Show loader or error message */}
-      {req.isFetching && (
-        <Spinner animation="border" role="status" className="mt-3" />
-      )}
-      {req.errMsg && <div className="text-danger mt-3">{req.errMsg}</div>}
 
-      {/* Table */}
-      <table className="table table-bordered mt-4">
-        <thead className="thead-dark">
-          <tr>
-            <th>Sr No</th>
-            <th>Details</th>
-            <th>Other Data</th>
-          </tr>
-        </thead>
-        <tbody>
-          {records.map((rec, index) => (
-            <ResourceRow
-              resourceName={resource}
-              key={rec.name + index}
-              resource={rec}
-              srNo={index + 1}
-            />
-          ))}
-        </tbody>
-      </table>
 
-      <Button
-        variant="primary"
-        className="mb-4"
-        disabled={isLoadingMore || noMoreRecords}
-        onClick={() => fetchResourceList()} 
-      >
-        {isLoadingMore ? (
-          <Spinner animation="border" size="sm" role="status" className="mr-2" />
-        ) : (
-          "Load More ..."
+        <Table  bordered hover>
+          <thead className="thead-dark">
+            <tr>
+              <th>Sr No</th>
+              <th>Details</th>
+              <th>Other Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            {req.isFetching && (
+              <h3 className="msgforloading">
+                We Are Fetching Data For You !! Please Wait ...
+              </h3>
+            )}
+            {req.errMsg && <div className="text-danger mt-3">{req.errMsg}</div>}
+            {records.map((rec, index) => (
+              <ResourceRow
+                resourceName={resource}
+                key={rec.name + index}
+                resource={rec}
+                srNo={index + 1}
+              />
+            ))}
+          </tbody>
+        </Table>
+
+        {!noMoreRecords && (
+          <Button
+            variant="primary"
+            className="mb-4"
+            disabled={isLoadingMore}
+            onClick={() => fetchResourceList()}
+          >
+            {isLoadingMore ? <SecondaryLoader /> : <> More {resource} </>}
+          </Button>
         )}
-      </Button>
-    </div>
+      </div>
   );
 };

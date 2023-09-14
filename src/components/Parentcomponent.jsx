@@ -7,6 +7,7 @@ import Nav from 'react-bootstrap/Nav';
 import { Container } from 'react-bootstrap';
 import  { About, Home,Version }  from './index';  
 import './compo_styles.css'; 
+import Footer from '../coman/footer';
 
 export const Parentcomponent = () => {
 
@@ -18,8 +19,9 @@ const ResourceListWrapper = () => {
   
 
   return (
+    <>
     <div className="App">
-      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+      <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary nav">
         <Container>
           <Navbar.Brand as={Link} to="/">
             MovieZilla
@@ -27,7 +29,7 @@ const ResourceListWrapper = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link as={Link} to="/home">
+              <Nav.Link className='navfontcolor' as={Link} to="/home">
                 Home
               </Nav.Link>
               <Nav.Link as={Link} to="/people">
@@ -76,5 +78,7 @@ const ResourceListWrapper = () => {
         </div>
       </div>
     </div>
+          <Footer />
+</>
   );
 }

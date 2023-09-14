@@ -1,71 +1,135 @@
-
-
-
 /* ResourceList.css */
 
+/* Regular styles for larger screens */
 .resource-list-container {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background-color: #f5f5f5;
-  }
-  
-  .resource-header {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .resource-table {
-    width: 100%;
-    border-radius: 10px;
-  }
-  
-  .load-more-button {
-    margin-top: 10px;
-  }
-  
-  .record-length {
-    font-size: 18px;
-    margin-top: 20px;
-  }
-  
-  .req-state {
-    font-size: 18px;
-    margin-top: 20px;
-  }
-  
-  .loadmore{
-    justify-content: center;
-  }
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
 
-  .retrybutton{
-    cursor: 'pointer' ;
-  }
+.resource-header {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
+.resource-table {
+  width: 100%;
+  border-radius: 10px;
+}
 
-/* .table thead th {
-  background-color: gray; 
-  color: black;  
-}  */
+.load-more-button {
+  margin-top: 10px;
+}
 
+.record-length,
+.req-state {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.loadmore {
+  justify-content: center;
+}
+
+.retrybutton {
+  cursor: pointer;
+}
 
 .otherDataItem {
   padding: 0.5rem;
   margin: 0.5rem 0;
   background: #f6f6f6;
   height: 35px;
+  font-size: 18px;
+  border-radius: 10px;
+
 }
 
 .otherDataItem:hover {
-  background: #e4e4e4;
-}
-
-.title {
+  background: white;
+  transform: scale(1.01);
   font-weight: bold;
-  font-size: 18px;
+  color: white;
+  text-decoration: none;
 }
 
-.detail{
-  font-size: 18px;
+.container {
+  padding: 15px;
+  max-width: 85%;
+  margin-bottom: 20px;
 }
+
+.msgforloading {
+  margin-top: 25px;
+}
+
+.tab-container {
+  border: 2px solid #007bff;
+  border-radius: 10px;
+  background-color: #fff;
+  width: 85%;
+  margin: 0 auto;
+  margin-bottom: 5%;
+  padding: 50px;
+  max-height: 750px;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.tab-container::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.tab-container::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.tab-container::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 5px;
+  height: 5px;
+}
+
+.tab-container::-webkit-scrollbar-thumb:hover {
+  background-color: gray;
+  height: 5px;
+}
+
+.tab-container {
+  padding-right: 15px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.footer {
+  font-size: 20px;
+  padding: 10px;
+  min-height: 2vh;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ccc;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.footer:hover {
+  background-color: rgb(37, 37, 37);
+  color: white;
+  transform: scale(1.01);
+}
+.title{
+  font-weight: bold;
+  
+}
+
+
+
+

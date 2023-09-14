@@ -31,6 +31,7 @@ export const getUniqResourceIdsFromRecords = (records) => {
         const pilots = record.pilots || [];
         const characters = record.characters || [];
         const residents = record.residents || [];
+        
 
 
         addToRes(characters);

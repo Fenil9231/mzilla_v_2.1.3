@@ -38,11 +38,11 @@ export const OtherDataItem = ({ url }) => {
     <div className='otherDataItem' ref={ref} data-test-id={`instance_${resourceName}_${id}`}>
       {isFetching ? (
         <div>
-          <SecondaryLoader /> &nbsp;&nbsp;&nbsp; {id}
+          <SecondaryLoader /> &nbsp;&nbsp; {id}
         </div>
       ) : errMsg ? (
         <div style={{ color: 'red' }}>
-          {<RiSignalWifiErrorFill/>} &nbsp;&nbsp;&nbsp; <span style={{ cursor: 'pointer' }} onClick={retry}><TfiReload /></span> &nbsp;&nbsp; {id}
+          {<RiSignalWifiErrorFill/>} &nbsp;&nbsp;&nbsp; <span className="pointer" onClick={retry}><TfiReload /></span> &nbsp;&nbsp; {id}
         </div>
       ) : (
         <div>
