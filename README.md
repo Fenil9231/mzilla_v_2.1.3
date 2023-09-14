@@ -1,6 +1,7 @@
+##  Demo Link : https://precious-pegasus-25d8c5.netlify.app/
+
 # Swapi Deshbord Project
 
-- Demo Link : https://precious-pegasus-25d8c5.netlify.app/
 - This project is devloped using StarWars (SWAPI_API).
 - This project is a web-based application for managing and displaying starwar Characters,Vehicles,Starships,Planets,species,Films etc. Below, you'll find details about the project's structure, functionality, and key utility files.
 
