@@ -76,6 +76,7 @@ export const ResourceInstance = () => {
             <th>Sr No</th>
             <th>Field</th>
             <th>Value</th>
+            {/* <th>Otherdata</th> */}
           </tr>
         </thead>
         <tbody>
@@ -86,7 +87,16 @@ export const ResourceInstance = () => {
               <td>{capitalizeFirstLetter(data[header])}</td>
             </tr>
           ))}
+        </tbody>
+      </Table>
+      <Table  bordered hover responsive>
+        <thead>
           <tr>
+            <th>Otherdata</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
             <div colSpan="4">
               <OtherDataList resource={data} />
             </div>

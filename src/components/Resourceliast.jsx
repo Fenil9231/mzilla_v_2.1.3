@@ -46,7 +46,7 @@ export const ResourceList = () => {
           <tbody>
             {req.isFetching && (
               <h3 className="msgforloading">
-                We Are Fetching Data For You !! Please Wait ...
+                Fetching !! Please Wait ...
               </h3>
             )}
             {req.errMsg && <div className="text-danger mt-3">{req.errMsg}</div>}

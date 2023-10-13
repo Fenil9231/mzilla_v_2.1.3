@@ -111,9 +111,11 @@
   font-size: 20px;
   padding: 10px;
   min-height: 2vh;
-  position: fixed;
+  position: relative;
+  margin-top: 40px ;
+  margin-left: 10px;
   bottom: 0;
-  width: 100%;
+  width: 99%;
   text-align: center;
   background-color: #f5f5f5;
   border-top: 1px solid #ccc;
