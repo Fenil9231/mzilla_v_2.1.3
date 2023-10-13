@@ -47,3 +47,17 @@ export const getUniqResourceIdsFromRecords = (records) => {
     
     return Object.keys(res);
 }
+
+export const keysToExclude = [
+    "characters",
+    "films",
+    "vehicles",
+    "opening_crawl",
+    "planets",
+    "starships",
+    "species",
+    "people",
+    "homeworld",
+    "residents",
+    "pilots"
+  ];

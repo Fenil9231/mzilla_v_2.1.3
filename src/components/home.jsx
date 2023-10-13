@@ -3,8 +3,8 @@ import React from "react";
 const Home = () => {
   const imageStyle = {
     // width: "100%",
-    height: "600px",
-    width: "1400px",
+    height: "800px",
+    width: "1800px",
     borderRadius: "20px",
   };
   return (
